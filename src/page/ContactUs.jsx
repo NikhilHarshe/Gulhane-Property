@@ -32,7 +32,7 @@ const ContactUs = () => {
 
       <section className="text-gray-400  body-font relative mt-0">
         <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
-          <div className="lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+          <div className="lg:w-2/3 md:w-1/2 w-11/12 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
             <iframe
               width="100%"
               height="100%"
