@@ -19,10 +19,10 @@ const Footer = () => {
                         <p className=' '>Gulhane Properties, founded in 2020 was built on the core values of trust, satisfaction and innovation. We offer beautiful homes with quality construction. After years and over projects in the city, we have cemented our place in the industry.</p>
 
                         <div className=' flex gap-5 items-center'>
-                            <BiLogoFacebookCircle className='text-[#F130A2] text-3xl' />
-                            <BsInstagram className='text-[#F130A2] text-xl' />
-                            <BsTwitter className='text-[#F130A2] text-2xl' />
-                            <BiLogoYoutube className='text-[#F130A2] text-3xl' />
+                            <BiLogoFacebookCircle className='text-[#F130A2] hover:text-pink-600 duration-100 text-3xl' />
+                            <BsInstagram className='text-[#F130A2] text-xl hover:text-pink-600 duration-100' />
+                            <BsTwitter className='text-[#F130A2] text-2xl hover:text-pink-600 duration-100' />
+                            <BiLogoYoutube className='text-[#F130A2] text-3xl hover:text-pink-600 duration-100' />
                         </div>
                     </div>
                     <div className=' w-[30%] flex gap-4 flex-col'>
@@ -42,11 +42,11 @@ const Footer = () => {
                             <BsDot className=' text-white text-4xl ml-[-10px]' /></h2>
                         <div className=' flex justify-between'>
                             <p>Gulhane Properties Brochure pdf</p>
-                            <button className=' border rounded-lg px-2 py-1 text-center'>Download Now</button>
+                            <button className=' border rounded-lg px-2 py-1 text-center border-gray-300 hover:border-white text-gray-300 hover:text-white duration-100'>Download Now</button>
                         </div>
                         <div className=' flex justify-between'>
                             <p>Project Spruha Pdf</p>
-                            <button className=' border rounded-lg px-2 py-1 text-center'>Download Now</button>
+                            <button className=' border rounded-lg px-2 py-1 text-center border-gray-300 hover:border-white text-gray-300 hover:text-white duration-100'>Download Now</button>
                         </div>
 
                     </div>

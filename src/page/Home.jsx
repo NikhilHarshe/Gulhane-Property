@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom' // Import useLocation
 import homImg1 from "../Component/Acets/srusha_cover 2.jpg"
 import homImg2 from "../Component/Acets/spruha_cover[1] 1.jpg"
 import img3 from "../Component/Acets/Screenshot 2024-06-08 194811.png"
@@ -15,17 +16,35 @@ import projectimg2 from "../Component/Acets/cover_page-0001 17 1.jpg"
 import ServisesImg from "../Component/Acets/gulhane brocher 1-images-1111.jpg"
 import arrow from "../Component/Acets/Arrow 1.png"
 import { MdOutlineArrowCircleLeft, MdOutlineArrowCircleRight } from 'react-icons/md'
+import { FaRegArrowAltCircleUp } from 'react-icons/fa'
+import { IoIosArrowUp } from 'react-icons/io'
 
 const Home = () => {
+    const location = useLocation(); // Get the current location
+    const targetRef = useRef(null);
+    const homeRef = useRef(null);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (location.hash === '#projects' && targetRef.current) {
+            targetRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [location]);
+
+    const homehandler = () => {
+        if (homeRef.current) {
+            homeRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
     const sliderimg = [slider1, slider2, slider3, slider4, slider5];
     const [sliderIndex, setSliderIndex] = useState(0);
-    console.log("sliderIndex ", sliderIndex);
+    // console.log("sliderIndex ", sliderIndex);
 
     return (
-        <div className=' w-11/12 mx-auto'>
-
+        <div className=' w-11/12 mx-auto relative'>
             {/* section 1 */}
-            <section className=' '>
+            <section className=' ' ref={homeRef}>
                 <div className=' flex justify-between flex-col'>
                     <p className=' text-[40px] w-[50%] py-12 leading-[50px]'>Gulhane Properties -<span className=' text-[#F130A2]'> A Trusted Name</span></p>
 
@@ -48,11 +67,10 @@ const Home = () => {
                         <p className=' text-[#C1C1C1] w-[89rem]'>Gulhane Properties, founded in 2020 was built on the core values of trust, satisfaction and innovation. We offer beautiful homes with quality construction. After years and over projects in the city, we have cemented our place in the industry</p>
                     </div>
                     <div className='text-[2.1rem] pl-16 font-thin flex w-[65rem] gap-12 justify-center items-center align-baseline text-center border-y'>
-                        <p className=' '>Learn More</p>
+                        <p className=' cursor-pointer' onClick={() => navigate("/about")}>Learn More</p>
                         <img src={arrow} alt="arrow" />
                     </div>
                 </div>
-
             </section >
 
             {/* About Project section 2 */}
@@ -97,8 +115,8 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* section 4 */}
-            <section className=' pb-28 border-b'>
+            {/* Our Projects section 4 */}
+            <section className=' pb-28 border-b' id='target-element' ref={targetRef}>
                 <p className=' text-center text-[2.7rem] py-10'>Our Projects</p>
 
                 <div className=' flex justify-between'>
@@ -161,12 +179,15 @@ const Home = () => {
                                 </ul>
                             </div>
                             <div>
-                                <button className=' text-lg border rounded-md px-2 py-1 mt-20'>Learn More</button>
+                                <button onClick={() => { navigate("/services") }} className=' text-lg border rounded-md px-2 py-1 mt-20 border-gray-300 hover:border-white text-gray-300 hover:text-white duration-100'>Learn More</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            <div className=' relative'>
+                <button className=' bg-blue-600 p-3 rounded-2xl fixed bottom-5 right-3' onClick={homehandler}><IoIosArrowUp className=' text-5xl text-'/></button>
+            </div>
         </div >
     )
 }
