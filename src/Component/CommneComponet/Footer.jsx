@@ -3,8 +3,10 @@ import { BiLogoFacebookCircle, BiLogoYoutube } from 'react-icons/bi'
 import { BsDot, BsInstagram, BsTelephoneFill, BsTwitter } from 'react-icons/bs'
 import { FaLocationDot } from 'react-icons/fa6'
 import { MdEmail } from 'react-icons/md'
+import { useNavigate } from 'react-router-dom'
 
 const Footer = () => {
+    const navigate = useNavigate();
     return (
         <div className='border-t border-[#B8B8B8]'>
             <div className='w-11/12 md:w-10/12 mx-auto pt-9'>
@@ -41,11 +43,11 @@ const Footer = () => {
                         </h2>
                         <div className='flex justify-between'>
                             <p>Gulhane Properties Brochure pdf</p>
-                            <button className='border rounded-lg px-2 py-1 text-center border-gray-300 hover:border-white text-gray-300 hover:text-white duration-100'>Download Now</button>
+                            <a href='#' target="_blank" className='border rounded-lg px-2 py-1 text-center border-gray-300 hover:border-white text-gray-300 hover:text-white duration-100'>Download Now</a>
                         </div>
                         <div className='flex justify-between'>
                             <p>Project Spruha Pdf</p>
-                            <button className='border rounded-lg px-2 py-1 text-center border-gray-300 hover:border-white text-gray-300 hover:text-white duration-100'>Download Now</button>
+                            <a href='#' target="_blank" className='border rounded-lg px-2 py-1 text-center border-gray-300 hover:border-white text-gray-300 hover:text-white duration-100'>Download Now</a>
                         </div>
                     </div>
                 </div>

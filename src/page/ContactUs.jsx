@@ -32,7 +32,7 @@ const ContactUs = () => {
 
       <section className="text-gray-400  body-font relative mt-0">
         <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
-          <div className="lg:w-2/3 md:w-1/2 w-11/12 lg:h-auto md:h-auto h-[20rem] bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+          <div className="lg:w-2/3 md:w-1/2 w-11/12 lg:h-auto sm:h-auto h-[20rem] bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
             <iframe
               width="100%"
               height="100%"
@@ -45,7 +45,7 @@ const ContactUs = () => {
               src={`https://maps.google.com/maps?width=100%&height=600&hl=en&q=${address}&ie=UTF8&t=&z=14&iwloc=B&output=embed`}
             // style={{ filter: 'grayscale(1) contrast(1.2) opacity(0.40)' }}
             ></iframe>
-            <div className="bg-[#1F2023] hidden relative lg:flex flex-wrap py-6 rounded shadow-md">
+            <div className="bg-[#1F2023] hidden relative sm:flex flex-wrap py-6 rounded shadow-md">
               <div className="lg:w-1/2 px-6">
                 <h2 className="title-font font-semibold text-[#F130A2] tracking-widest text-xs">ADDRESS</h2>
                 <p className="mt-1">432V+RCF, Omkar Nagar Rd, Swaraj Nagar, Omkar Nagar, Nagpur, Maharashtra 440027</p>

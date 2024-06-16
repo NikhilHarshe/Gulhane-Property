@@ -79,7 +79,7 @@ const Home = () => {
             {/* About Project section 2 */}
             <section className='border-b mt-8 lg:mt-16'>
                 <p className='py-4 lg:py-9 text-lg lg:text-[2rem] font-thin'>About Project</p>
-                <div className='flex flex-col lg:flex-row justify-between'>
+                <div className='flex flex-col sm:mb-0 mb-7 sm:flex-row justify-between'>
                     <div>
                         <div className='text-lg lg:text-[2.2rem] leading-relaxed tracking-wider font-semibold'>
                             <p>Traditional Value</p>
