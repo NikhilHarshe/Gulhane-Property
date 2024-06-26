@@ -4,6 +4,7 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 
 const Navbar = () => {
     const location = useLocation();
+    console.log("locatino : ", location.pathname)
     const navigate = useNavigate();
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -16,7 +17,7 @@ const Navbar = () => {
             <nav className='text-[1.4rem] py-5 flex justify-center align-middle border-b border-[#9F9F9F] leading-relaxed'>
                 <div className='flex justify-between items-center w-11/12 mx-auto'>
                     <div className='cursor-pointer' onClick={() => navigate("/")}>
-                        logo
+                    Gulhane Properties
                     </div>
                     <div className='lg:hidden cursor-pointer' onClick={handleToggleMenu}>
                         {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
