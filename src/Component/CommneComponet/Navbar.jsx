@@ -13,7 +13,7 @@ const Navbar = () => {
     };
 
     return (
-        <div>
+        <div className='data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600"'>
             <nav className='text-[1.4rem] py-5 flex justify-center align-middle border-b border-[#9F9F9F] leading-relaxed'>
                 <div className='flex justify-between items-center w-11/12 mx-auto'>
                     <div className='cursor-pointer' onClick={() => navigate("/")}>
