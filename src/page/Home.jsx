@@ -17,6 +17,8 @@ import ServisesImg from "../Component/Acets/gulhane brocher 1-images-1111.jpg"
 import arrow from "../Component/Acets/Arrow 1.png"
 import { MdOutlineArrowCircleLeft, MdOutlineArrowCircleRight } from 'react-icons/md'
 import { IoIosArrowUp } from 'react-icons/io'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Home = () => {
     const location = useLocation();
@@ -38,15 +40,20 @@ const Home = () => {
 
     const sliderimg = [slider1, slider2, slider3, slider4, slider5];
     const [sliderIndex, setSliderIndex] = useState(0);
-
+    useEffect(() => {
+        AOS.init({duration: 1000,
+          
+        });
+      }, [])
+    
     return (
         <div className='w-11/12 mx-auto relative'>
             {/* section 1 */}
             <section className='mt-4' ref={homeRef}>
                 <div className='flex flex-col lg:flex-row lg:justify-between'>
-                    <p className='text-3xl lg:text-5xl w-full lg:w-1/2 py-6 lg:py-12 leading-tight lg:leading-[70px]'>Gulhane Properties -<span className='text-[#F130A2]'> A Trusted Name</span></p>
+                    <p className='text-3xl lg:text-5xl w-full lg:w-1/2 py-6 lg:py-12 leading-tight lg:leading-[70px] ' data-aos="fade-right" >Gulhane Properties -<span className='text-[#F130A2]'> A Trusted Name</span></p>
 
-                    <div className='flex w-full lg:w-[50rem] '>
+                    <div className='flex w-full lg:w-[50rem] 'data-aos="fade-left">
                         <img src={homImg1} alt="img1" className='w-full lg:w-auto' />
                         <img src={homImg2} alt="img2" className='w-full lg:w-auto hidden lg:flex' />
                     </div>
@@ -66,8 +73,8 @@ const Home = () => {
 
                 <div className='flex flex-col lg:flex-row'>
                     <div className='border-y border-r flex items-center gap-4 lg:gap-[3.8rem] pr-4 lg:pr-10 w-full lg:w-[55rem] py-8 lg:py-16 pl-0'>
-                        <p className='text-lg lg:text-[2.7rem] text-center w-full'>About Us</p>
-                        <p className='text-[#C1C1C1] text-sm lg:text-base w-full lg:w-[89rem]'>Gulhane Properties, founded in 2020 was built on the core values of trust, satisfaction and innovation. We offer beautiful homes with quality construction. After years and over projects in the city, we have cemented our place in the industry</p>
+                        <p className='text-lg lg:text-[2.7rem] text-center w-full' data-aos="zoom-in">About Us</p>
+                        <p className='text-[#C1C1C1] text-sm lg:text-base w-full lg:w-[89rem]' data-aos="zoom-in">Gulhane Properties, founded in 2020 was built on the core values of trust, satisfaction and innovation. We offer beautiful homes with quality construction. After years and over projects in the city, we have cemented our place in the industry</p>
                     </div>
                     <div className='text-base lg:text-[2.1rem] py-6 pl-4 lg:pl-16 font-thin flex w-full lg:w-[65rem] gap-4 lg:gap-12 justify-center items-center text-center border-y'>
                         <p className='cursor-pointer' onClick={() => navigate("/about")}>Learn More</p>
@@ -108,7 +115,9 @@ const Home = () => {
             {/* section 3 */}
             <section className='w-full border-b mt-8 lg:mt-16'>
                 <div className='text-center text-2xl lg:text-[2.7rem] lg:leading-[4rem] tracking-wide w-full lg:w-[50rem] mx-auto pt-6 lg:pt-1 pb-10 lg:pb-20'>Our Key of Construction Planing, and <span className='text-[#F130A2]'>business Goal.</span></div>
-                <div className='flex flex-col lg:flex-row  gap-4 lg:gap-10 lg:flex-wrap lg:mb-32 mb-10'>
+                <div className='flex flex-col lg:flex-row  gap-4 lg:gap-10 lg:flex-wrap lg:mb-32 mb-10' data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
                     <img src={planingImg1} className='w-full lg:w-auto brightness-75 hover:brightness-100 duration-100' alt="" />
                     <img src={planingImg2} className='w-full lg:w-auto brightness-75 hover:brightness-100 duration-100' alt="" />
                     <img src={planingImg3} className='w-full lg:w-auto brightness-75 hover:brightness-100 duration-100' alt="" />
@@ -122,72 +131,111 @@ const Home = () => {
             <section className='pb-14 lg:pb-28 border-b' id='target-element' ref={targetRef}>
                 <p className='text-center text-2xl lg:text-[2.7rem] py-6 lg:py-10'>Our Projects</p>
 
-                <div className='flex flex-col lg:flex-row justify-between gap-10 lg:gap-10'>
-                    <div>
-                        <img src={slider2} className='w-full lg:w-auto  brightness-75 hover:brightness-100 duration-100' alt="" />
-                        <div className='rounded-tl-full bg-[#D9D9D933] border border-[#F130A2] rounded-br-full flex flex-col justify-center items-center align-middle py-6 mt-4 lg:mt-10 text-lg lg:text-3xl'>
-                            <p className='text-[#F130A2]'>Spruha Kusum </p>
-                            <p>@Omkar Nagar</p>
-                        </div>
-                    </div>
-                    <div>
-                        <img src={projectimg2} className='w-full lg:w-auto  brightness-75 hover:brightness-100 duration-100' alt="" />
-                        <div className='rounded-tl-full bg-[#D9D9D933] border border-[#F130A2] rounded-br-full flex flex-col justify-center items-center align-middle py-6 mt-4 lg:mt-10 text-lg lg:text-3xl'>
-                            <p className='text-[#F130A2]'>Spruha Enclave </p>
-                            <p>@Shivshakti Nagar</p>
-                        </div>
-                    </div>
-                    <div>
-                        <img src={projectimg3} className='w-full lg:w-auto  brightness-75 hover:brightness-100 duration-100' alt="" />
-                        <div className='rounded-tl-full bg-[#D9D9D933] border border-[#F130A2] rounded-br-full flex flex-col justify-center items-center align-middle py-6 mt-4 lg:mt-10 text-lg lg:text-3xl'>
-                            <p className='text-[#F130A2]'>Spruha Sindhu </p>
-                            <p>@Gurukunj Nagar</p>
-                        </div>
-                    </div>
-                </div>
+                <div className='flex flex-col lg:flex-row justify-between gap-10 lg:gap-10' data-aos='zoom-in-right'>
+      <div>
+        <img src={slider2} className='w-full lg:w-auto brightness-75 hover:brightness-100 duration-100' alt='' />
+        <div className='rounded-tl-full bg-[#D9D9D933] border border-[#F130A2] rounded-br-full flex flex-col justify-center items-center align-middle py-6 mt-4 lg:mt-10 text-lg lg:text-3xl' data-aos='zoom-in-left'>
+          <p className='text-[#F130A2]'>Spruha Kusum</p>
+          <p>@Omkar Nagar</p>
+        </div>
+      </div>
+      <div>
+        <img src={projectimg2} className='w-full lg:w-auto brightness-75 hover:brightness-100 duration-100' alt='' />
+        <div className='rounded-tl-full bg-[#D9D9D933] border border-[#F130A2] rounded-br-full flex flex-col justify-center items-center align-middle py-6 mt-4 lg:mt-10 text-lg lg:text-3xl'>
+          <p className='text-[#F130A2]'>Spruha Enclave</p>
+          <p>@Shivshakti Nagar</p>
+        </div>
+      </div>
+      <div>
+        <img src={projectimg3} className='w-full lg:w-auto brightness-75 hover:brightness-100 duration-100' alt='' />
+        <div className='rounded-tl-full bg-[#D9D9D933] border border-[#F130A2] rounded-br-full flex flex-col justify-center items-center align-middle py-6 mt-4 lg:mt-10 text-lg lg:text-3xl'>
+          <p className='text-[#F130A2]'>Spruha Sindhu</p>
+          <p>@Gurukunj Nagar</p>
+        </div>
+      </div>
+    </div>
             </section>
 
             {/* section 5 */}
             <section className='mb-10 lg:mb-20'>
-                <h2 className='text-center text-lg lg:text-[2.7rem] mt-8 lg:mt-16 mb-4 lg:mb-6'>Services</h2>
-                <div className='flex flex-col lg:flex-row text-lg lg:text-[2.7rem] gap-6 lg:gap-24 justify-between'>
-                    <div className='w-full lg:w-[50%] flex flex-col gap-4 lg:gap-9'>
-                        <div>
-                            <div className='flex items-center gap-2 lg:gap-9 lg:leading-[4rem]'><img src={arrow} alt="arrow" className='w-4 lg:w-auto' /> <p>Interior Designer</p></div>
-                            <div className='flex items-center gap-2 lg:gap-9 lg:leading-[4rem]'><img src={arrow} alt="arrow" className='w-4 lg:w-auto' /><p>Planning</p></div>
-                        </div>
+      <h2
+        className='text-center text-lg lg:text-[2.7rem] mt-8 lg:mt-16 mb-4 lg:mb-6'
+        data-aos='fade-up'
+      >
+        Services
+      </h2>
+      <div className='flex flex-col lg:flex-row text-lg lg:text-[2.7rem] gap-6 lg:gap-24 justify-between'>
+        <div className='w-full lg:w-[50%] flex flex-col gap-4 lg:gap-9'>
+          <div data-aos='fade-right'>
+            <div className='flex items-center gap-2 lg:gap-9 lg:leading-[4rem]'>
+              <img src={arrow} alt='arrow' className='w-4 lg:w-auto' />
+              <p>Interior Designer</p>
+            </div>
+            <div className='flex items-center gap-2 lg:gap-9 lg:leading-[4rem]'>
+              <img src={arrow} alt='arrow' className='w-4 lg:w-auto' />
+              <p>Planning</p>
+            </div>
+          </div>
 
-                        <div>
-                            <p className=' pb-8'><span className='text-[#F130A2] '>Upcoming</span> Project -</p>
-                            <img src={ServisesImg} alt="" className='w-full lg:w-auto brightness-75 hover:brightness-100 duration-100' />
-                        </div>
-                    </div>
+          <div data-aos='fade-up'>
+            <p className='pb-8'>
+              <span className='text-[#F130A2] '>Upcoming</span> Project -
+            </p>
+            <img
+              src={ServisesImg}
+              alt=''
+              className='w-full lg:w-auto brightness-75 hover:brightness-100 duration-100'
+            />
+          </div>
+        </div>
 
-                    <div className='w-full lg:w-[50%] flex flex-col gap-4 lg:gap-24'>
-                        <div className='pl-6 lg:pl-28'>
-                            <div className='flex items-center gap-2 lg:gap-9 lg:leading-[4rem]'><img src={arrow} alt="arrow" className='w-4 lg:w-auto' /> <p>Landscape</p></div>
-                            <div className='flex items-center gap-2 lg:gap-9 lg:leading-[4rem]'><img src={arrow} alt="arrow" className='w-4 lg:w-auto' /> <p>Visualization</p></div>
-                            <div className='flex items-center gap-2 lg:gap-9 lg:leading-[4rem]'><img src={arrow} alt="arrow" className='w-4 lg:w-auto' /> <p>Presentation</p></div>
-                        </div>
-                        <div>
-                            <div className='mb-4 lg:mb-10'>
-                                <h2>Why Choose us</h2>
-                                <p className='text-sm lg:text-base w-full lg:w-[33rem] my-2 lg:my-5 text-[#C1C1C1]'>Crafted for the exclusive few, Gulhane Properties offers an elevated lifestyle that redefines luxury in the heart of Nagpur Indulge yourself in this oasis of calm nestled away from the busy streets of Nagpur surrounded by trees and gardens.</p>
-                            </div>
-                            <div>
-                                <ul className='list-disc list-inside leading-tight'>
-                                    <li>Good Experiance</li>
-                                    <li>Our Best Confidence</li>
-                                    <li>Good Services</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <button onClick={() => { navigate("/services") }} className='text-sm lg:text-lg border rounded-md px-2 py-1 mt-6 lg:mt-20 border-gray-300 hover:border-white text-gray-300 hover:text-white duration-100'>Learn More</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div className='w-full lg:w-[50%] flex flex-col gap-4 lg:gap-24'>
+          <div className='pl-6 lg:pl-28' data-aos='fade-left'>
+            <div className='flex items-center gap-2 lg:gap-9 lg:leading-[4rem]'>
+              <img src={arrow} alt='arrow' className='w-4 lg:w-auto' />
+              <p>Landscape</p>
+            </div>
+            <div className='flex items-center gap-2 lg:gap-9 lg:leading-[4rem]'>
+              <img src={arrow} alt='arrow' className='w-4 lg:w-auto' />
+              <p>Visualization</p>
+            </div>
+            <div className='flex items-center gap-2 lg:gap-9 lg:leading-[4rem]'>
+              <img src={arrow} alt='arrow' className='w-4 lg:w-auto' />
+              <p>Presentation</p>
+            </div>
+          </div>
+          <div data-aos='fade-up'>
+            <div className='mb-4 lg:mb-10'>
+              <h2>Why Choose us</h2>
+              <p className='text-sm lg:text-base w-full lg:w-[33rem] my-2 lg:my-5 text-[#C1C1C1]'>
+                Crafted for the exclusive few, Gulhane Properties offers an
+                elevated lifestyle that redefines luxury in the heart of
+                Nagpur Indulge yourself in this oasis of calm nestled away
+                from the busy streets of Nagpur surrounded by trees and
+                gardens.
+              </p>
+            </div>
+            <div>
+              <ul className='list-disc list-inside leading-tight'>
+                <li>Good Experience</li>
+                <li>Our Best Confidence</li>
+                <li>Good Services</li>
+              </ul>
+            </div>
+            <div>
+              <button
+                onClick={() => {
+                  navigate('/services');
+                }}
+                className='text-sm lg:text-lg border rounded-md px-2 py-1 mt-6 lg:mt-20 border-gray-300 hover:border-white text-gray-300 hover:text-white duration-100'
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
             <div className='relative'>
                 <button className='bg-blue-600 p-3 rounded-2xl fixed bottom-5 right-3' onClick={homehandler}><IoIosArrowUp className='text-2xl lg:text-5xl' /></button>
             </div>
